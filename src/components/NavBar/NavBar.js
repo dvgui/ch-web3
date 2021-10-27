@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -182,6 +183,18 @@ export default function PrimarySearchAppBar() {
                     </Typography>
                     </Box>
                     <Box sx={{ flexGrow: 1 }} />
+                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <IconButton
+                            size="large"
+                            edge="end"
+                            aria-label="cart"
+                            aria-haspopup="true"
+                            onClick=""
+                            color="inherit"
+                        >
+                        <ShoppingCartIcon />
+                        </IconButton>
+                    </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton
                             size="large"
