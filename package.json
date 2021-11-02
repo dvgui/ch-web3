@@ -1,5 +1,6 @@
 {
   "name": "curso-front",
+  "homepage": "https://ch3.guidito.com.ar",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
