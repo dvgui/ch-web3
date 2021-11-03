@@ -33,7 +33,7 @@ export default function BasicCard({product}) {
 
         <CardContent>
           <Typography variant="h5" component="div">
-            {product.name}
+            {product.title} - {product.price}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {product.description}
@@ -41,8 +41,8 @@ export default function BasicCard({product}) {
         </CardContent>
 
         <CardMedia component="img" 
-          image={product.img} 
-          alt={product.name} 
+          image={product.image} 
+          alt={product.title} 
           style={{
             height: '15rem',
             width: 'auto',

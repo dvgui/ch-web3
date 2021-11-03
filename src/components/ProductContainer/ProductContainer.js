@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import ProductCard from '../ProductCard/ProductCard';
-import { getFetch } from './getFetch';
+//import { getFetch } from './getFetch';
 /* This is the component that holds all the products on the main page */
 
 export default function BasicGrid() {
@@ -13,10 +13,17 @@ export default function BasicGrid() {
 
    
   useEffect(() => {
+    /*
     getFetch
     .then(res => {
       setProducts(res);
     })
+    .catch(err => console.log(err))
+    .finally(() => setLoading(false))
+    */
+    fetch('https://fakestoreapi.com/products/')
+    .then(res => res.json())
+    .then(res => setProducts(res))
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
 
