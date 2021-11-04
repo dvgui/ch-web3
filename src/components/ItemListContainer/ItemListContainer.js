@@ -2,7 +2,7 @@ import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import CardContainer from "../ProductContainer/ProductContainer";
+import Products from "../Products/Products";
 
 /* This is the main section of the home page */
 
@@ -19,7 +19,7 @@ export default function SimpleContainer(props) {
         <h1>{props.greeting}</h1>
         <h2>These are the products we have</h2>
 
-        <CardContainer />
+        <Products />
         </Box>
       </Container>
     </React.Fragment>
