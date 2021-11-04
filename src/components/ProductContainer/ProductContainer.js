@@ -11,6 +11,12 @@ export default function BasicGrid() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const getFetch = async () => {
+    let prodRes = await fetch('https://fakestoreapi.com/products/');
+    let prodJson = await prodRes.json();
+    setProducts(prodJson);
+  }
+
    
   useEffect(() => {
     /*
@@ -21,11 +27,16 @@ export default function BasicGrid() {
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
     */
+    getFetch()
+    .catch(err => console.log(err))
+    .finally(() => setLoading(false))
+    /*
     fetch('https://fakestoreapi.com/products/')
     .then(res => res.json())
     .then(res => setProducts(res))
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
+    */
 
   } , [])
 

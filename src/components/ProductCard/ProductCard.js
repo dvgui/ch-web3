@@ -15,7 +15,7 @@ import Grid from '@mui/material/Grid';
 export default function BasicCard({product}) {
 
   const [count, setCount] = useState(0);
-  const stock = product.stock;
+  const stock = product.stock || 5;
   function add(){
       if (count < stock) {
           setCount(count+1);
@@ -36,7 +36,7 @@ export default function BasicCard({product}) {
             {product.title} - {product.price}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {product.description}
+            {product.description.substring(0, 55)}...
           </Typography>
         </CardContent>
 
