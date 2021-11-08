@@ -10,6 +10,7 @@ export default function BasicGrid() {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   const getFetch = async () => {
     let prodRes = await fetch('https://fakestoreapi.com/products/');
