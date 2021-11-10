@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Product from "../Product/Product";
+import { useParams } from 'react-router';
 
 /* This is the product detail container */
 
@@ -12,6 +13,7 @@ import Product from "../Product/Product";
 
 export default function SimpleContainer(props) {
 
+  const {prodId} = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -23,10 +25,10 @@ export default function SimpleContainer(props) {
   }
 
   useEffect( () => {
-    getProduct(props.product)
+    getProduct(prodId)
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
-  } , )
+  } , [prodId])
 
   return (
     <React.Fragment>

@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,6 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import NavLinks from './NavLinks'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -145,6 +147,7 @@ export default function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton>
+                    <Link to='/' style={{color: 'inherit', textDecoration: 'inherit'}}>
                     <Typography
                         variant="h6"
                         noWrap
@@ -153,6 +156,7 @@ export default function PrimarySearchAppBar() {
                     >
                         Crypto Shop
                     </Typography>
+                    </Link>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -162,26 +166,8 @@ export default function PrimarySearchAppBar() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Box sx={{ mr: '1rem', display: { xs: 'none', md: 'flex' } }}>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{  display: { xs: 'none', sm: 'block' } }}
-                    >
-                        Category 1
-                    </Typography>
-                    </Box>
-                    <Box sx={{ mr: '1rem', display: { xs: 'none', md: 'flex' } }}>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
-                        Category 2
-                    </Typography>
-                    </Box>
+                    <NavLinks />
+                    
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <IconButton

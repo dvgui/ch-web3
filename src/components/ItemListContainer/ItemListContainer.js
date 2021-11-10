@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useParams } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -7,6 +8,8 @@ import Products from "../Products/Products";
 /* This is the main section of the home page */
 
 export default function SimpleContainer(props) {
+
+  const { category } = useParams() || '';
 
   return (
     <React.Fragment>
@@ -19,7 +22,7 @@ export default function SimpleContainer(props) {
         <h1>{props.greeting}</h1>
         <h2>These are the products we have</h2>
 
-        <Products />
+        <Products category={category} />
         </Box>
       </Container>
     </React.Fragment>

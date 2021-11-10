@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -30,7 +31,7 @@ export default function BasicCard({product}) {
     <Grid item xs={4}>
 
       <Card sx={{ minWidth: 275 }}>
-
+        <Link to={`/product/${product.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
         <CardContent>
           <Typography variant="h5" component="div">
             {product.title} - {product.price}
@@ -39,7 +40,7 @@ export default function BasicCard({product}) {
             {product.description.substring(0, 55)}...
           </Typography>
         </CardContent>
-
+        </Link>
         <CardMedia component="img" 
           image={product.image} 
           alt={product.title} 

@@ -6,16 +6,23 @@ import ProductCard from '../ProductCard/ProductCard';
 //import { getFetch } from './getFetch';
 /* This is the component that holds all the products on the main page */
 
-export default function BasicGrid() {
+export default function BasicGrid(props) {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  const category = props.category;
 
   const getFetch = async () => {
-    let prodRes = await fetch('https://fakestoreapi.com/products/');
-    let prodJson = await prodRes.json();
-    setProducts(prodJson);
+    if (category) {
+      let prodRes = await fetch('https://fakestoreapi.com/products/category/'+category);
+      let prodJson = await prodRes.json();
+      setProducts(prodJson);
+    }
+    else {
+      let prodRes = await fetch('https://fakestoreapi.com/products/');
+      let prodJson = await prodRes.json();
+      setProducts(prodJson);
+    }    
   }
 
    
@@ -39,7 +46,7 @@ export default function BasicGrid() {
     .finally(() => setLoading(false))
     */
 
-  } , [])
+  } , )
 
   return (
     <Box sx={{ flexGrow: 1 }}>
