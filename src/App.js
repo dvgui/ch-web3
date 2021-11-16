@@ -2,7 +2,7 @@
 import './App.css';
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
+import { CartContext } from './context/CartContext';
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
@@ -13,6 +13,7 @@ function App() {
   //let prodId = 1;
 
   return (
+    <CartContext.Provider>
     <BrowserRouter>
     <div className="App">
       
@@ -24,6 +25,7 @@ function App() {
         </Routes>
     </div>
     </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 
