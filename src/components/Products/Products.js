@@ -27,24 +27,10 @@ export default function BasicGrid(props) {
 
    
   useEffect(() => {
-    /*
-    getFetch
-    .then(res => {
-      setProducts(res);
-    })
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
-    */
+
     getFetch()
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
-    /*
-    fetch('https://fakestoreapi.com/products/')
-    .then(res => res.json())
-    .then(res => setProducts(res))
-    .catch(err => console.log(err))
-    .finally(() => setLoading(false))
-    */
 
   } , )
 
@@ -52,7 +38,6 @@ export default function BasicGrid(props) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       <>{loading ? <h3>Loading...</h3> : products.map( prod => <ProductCard product={prod} />)}</>
-
       </Grid>
     </Box>
   );
