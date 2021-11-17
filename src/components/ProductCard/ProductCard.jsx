@@ -54,7 +54,7 @@ export default function BasicCard({product}) {
             <ButtonActions product={product} handleInter={handleInter} />
             :
             <Link to='/cart' style={{ width: '100%' }}>
-              <Button >
+              <Button>
               Purchase
               </Button>
             </Link>
