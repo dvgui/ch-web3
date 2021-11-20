@@ -3,6 +3,7 @@ import { useCartContext } from '../../context/CartContext'
 import CartWidgetItem from './CartWidgetItem';
 import { Button, Card, CardActions, 
     CardContent, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
     const { cartList, clearCart } = useCartContext();
@@ -22,8 +23,14 @@ export default function Cart() {
             }
           </CardContent>
           <CardActions>
-            <Button size="small">Cart</Button>
-            <Button size="small">Checkout</Button>
+            <Link to='/cart' 
+                style={{color: 'inherit', textDecoration: 'inherit'}}>
+                <Button size="small">Cart</Button>
+            </Link>
+            <Link to='/category/electronics' 
+                style={{color: 'inherit', textDecoration: 'inherit'}}>
+                <Button size="small">Checkout</Button>
+            </Link>
           </CardActions>
         </Card>
     )

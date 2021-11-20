@@ -13,8 +13,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import NavLinks from './NavLinks'
+import CartLinks from './CartLinks';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -169,31 +170,10 @@ export default function PrimarySearchAppBar() {
                     <NavLinks />
                     
                     <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="cart"
-                            aria-haspopup="true"
-                            onClick=""
-                            color="inherit"
-                        >
-                        <ShoppingCartIcon />
-                        </IconButton>
-                    </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
-                    </Box>
+                    <CartLinks 
+                        menuId
+                        handleProfileMenuOpen  
+                    />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"

@@ -11,20 +11,21 @@ import { useParams } from 'react-router';
 
 
 
-export default function SimpleContainer(props) {
+export default function ItemDetailContainer() {
 
   const {prodId} = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  async function getProduct(prodId) {
-    let prodRes = await fetch('https://fakestoreapi.com/products/' + prodId);
-    let prodJson = await prodRes.json();
-    setProduct(prodJson);
-    console.log('https://fakestoreapi.com/products/' + prodId);
-  }
+
 
   useEffect( () => {
+    async function getProduct(prodId) {
+      let prodRes = await fetch('https://fakestoreapi.com/products/' + prodId);
+      let prodJson = await prodRes.json();
+      setProduct(prodJson);
+      console.log('https://fakestoreapi.com/products/' + prodId);
+    }
     getProduct(prodId)
     .catch(err => console.log(err))
     .finally(() => setLoading(false))

@@ -1,9 +1,9 @@
 import React from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { IconButton, Box, AccountCircle, 
-    Button, Popper, Fade, 
-    Paper, Typography } from '@mui/material';
+import { IconButton, Box,  
+    Popper, Fade, Paper } from '@mui/material';
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 import CartWidget from '../CartWidget/CartWidget'
 
 function CartLinks({menuId, handleProfileMenuOpen}) {
@@ -23,7 +23,9 @@ function CartLinks({menuId, handleProfileMenuOpen}) {
             >
             <ShoppingCartIcon />
             </IconButton>
-            <Popper {...bindPopper(popupState)} transition>
+            <Popper 
+            placement="bottom-end"
+            {...bindPopper(popupState)} transition>
                 {({ TransitionProps }) => (
                 <Fade {...TransitionProps} timeout={350}>
                     <Paper>

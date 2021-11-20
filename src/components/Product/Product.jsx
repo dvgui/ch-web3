@@ -8,25 +8,21 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import ButtonActions from '../ProductCard/ButtonActions';
+import { Link } from 'react-router-dom';
 //import Grid from '@mui/material/Grid';
 
 /* This component is each individual product card */
 
 
-export default function BasicCard({product}) {
+export default function Product({product}) {
 
-  const [count, setCount] = useState(0);
-  const stock = product.stock || 5;
-  function add(){
-      if (count < stock) {
-          setCount(count+1);
-      }
+  const [inputType, setInputType] = useState('input');
+
+  const handleInter = () => {
+    setInputType('button');
   }
-  function remove(){
-      if (count > 0) {
-          setCount(count-1);
-      }
-  }
+
   return (
     
       <Card sx={{ display: 'flex' }}>
@@ -57,12 +53,17 @@ export default function BasicCard({product}) {
             }}
         />
           
-        <CardActions sx={{ justifyContent : 'space-between' }}>
-            <Button size="small" onClick={remove}>-</Button>
-            {count}
-            <Button size="small">Add To Cart</Button>
-            <Button size="small" onClick={add}>+</Button>
-        </CardActions>
+        <CardActions handleInter={handleInter} sx={{ justifyContent : 'space-between' }}>
+          {inputType === 'input' ?
+            <ButtonActions product={product} handleInter={handleInter} />
+            :
+            <Link to='/cart' style={{ width: '100%' }}>
+              <Button>
+              Purchase
+              </Button>
+            </Link>
+          }
+         </CardActions>       
         
       </Card>
 

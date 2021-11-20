@@ -19,7 +19,6 @@ function App() {
         <div className="App">
           
             <NavBar />
-            <Cart />
             <Routes>
               <Route exact path='/' 
                 element={<ItemListContainer 
