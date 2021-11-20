@@ -32,6 +32,9 @@ function App() {
               <Route exact path='/product/:prodId' 
                 element={<ItemDetailContainer/> } 
               />
+              <Route exact path='/cart'
+              element={<Cart/>}
+              />
             </Routes>
         </div>
       </BrowserRouter>

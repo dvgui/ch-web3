@@ -9,6 +9,7 @@ export default function CartItem( {item} ) {
     const remove = (item) =>{
         removeItem(item);
     }
+    
 
     return (
         <div>

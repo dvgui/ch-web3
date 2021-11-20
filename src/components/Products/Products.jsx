@@ -12,27 +12,28 @@ export default function BasicGrid(props) {
   const [loading, setLoading] = useState(true);
   const category = props.category;
 
-  const getFetch = async () => {
-    if (category) {
-      let prodRes = await fetch('https://fakestoreapi.com/products/category/'+category);
-      let prodJson = await prodRes.json();
-      setProducts(prodJson);
-    }
-    else {
-      let prodRes = await fetch('https://fakestoreapi.com/products/');
-      let prodJson = await prodRes.json();
-      setProducts(prodJson);
-    }    
-  }
 
    
   useEffect(() => {
+    const getFetch = async () => {
+      if (category) {
+        let prodRes = await fetch('https://fakestoreapi.com/products/category/'+category);
+        let prodJson = await prodRes.json();
+        setProducts(prodJson);
+      }
+      else {
+        let prodRes = await fetch('https://fakestoreapi.com/products/');
+        let prodJson = await prodRes.json();
+        setProducts(prodJson);
+      }    
+    }
+  
 
     getFetch()
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
 
-  } , )
+  } , [category])
 
   return (
     <Box sx={{ flexGrow: 1 }}>

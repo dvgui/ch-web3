@@ -32,7 +32,7 @@ export default function BasicCard({product}) {
         <Link to={`/product/${product.id}`} style={{color: 'inherit', textDecoration: 'inherit'}}>
         <CardContent>
           <Typography variant="h5" component="div">
-            {product.title} - {product.price}
+            {product.title} - ${product.price}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {product.description.substring(0, 55)}...
