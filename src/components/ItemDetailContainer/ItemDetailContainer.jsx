@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Product from "../Product/Product";
 import { useParams } from 'react-router';
+import { getFirestore } from '../../service/getFirestore';
 
 /* This is the product detail container */
 
@@ -18,8 +19,30 @@ export default function ItemDetailContainer() {
   const [loading, setLoading] = useState(true);
 
 
+  useEffect(() => {
+    const getProducts = async () => {
 
-  useEffect( () => {
+      try {
+        const dbQuery = getFirestore();
+        const collection = await dbQuery.collection('items')
+            .doc(prodId)
+            .get()          
+        collection.size === 0 && console.log("Product doesn't exist");
+        setProduct({id : collection.id, ...collection.data() })
+
+      } catch (err) {
+        console.log("Error searching items ", err);
+      } finally {
+        setLoading(false);
+      }
+      
+    }
+
+    getProducts();
+
+  }, [prodId])
+
+/*   useEffect( () => {
     async function getProduct(prodId) {
       let prodRes = await fetch('https://fakestoreapi.com/products/' + prodId);
       let prodJson = await prodRes.json();
@@ -29,7 +52,7 @@ export default function ItemDetailContainer() {
     getProduct(prodId)
     .catch(err => console.log(err))
     .finally(() => setLoading(false))
-  } , [prodId])
+  } , [prodId]) */
 
   return (
     <React.Fragment>
