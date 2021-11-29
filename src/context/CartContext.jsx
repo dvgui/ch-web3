@@ -30,13 +30,25 @@ export default function CartContextProvider({children}) {
             setCartList(cartList.filter( prod => prod.id !== item.id))
     }
 
+    const cartTotal = () =>{
+        if (cartList.length > 0) {
+            let total= 0;
+            cartList.map(item => total+=item.price)
+            return total;
+        }
+        else {
+            return 0;
+        }
+    }
+
     return (
         <CartContext.Provider
             value={{
                 cartList,
                 addToCart,
                 clearCart,
-                removeItem
+                removeItem,
+                cartTotal
             }}
         >
             {children}

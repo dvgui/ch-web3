@@ -8,6 +8,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartContextProvider from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
               />
               <Route exact path='/cart'
               element={<Cart/>}
+              />
+              <Route exact path='/checkout'
+              element={<Checkout />}
               />
             </Routes>
         </div>

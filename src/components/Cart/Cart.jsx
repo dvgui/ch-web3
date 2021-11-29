@@ -22,11 +22,17 @@ export default function Cart() {
                 <Typography variant="h4">The cart is empty</Typography>
                     <Link to='/' 
                     style={{color: 'inherit', textDecoration: 'inherit'}}>
-                        <Button onClick={clearCart}>Home</Button>
+                        <Button>Home</Button>
                     </Link>
                 </>
                 :
-                <Button onClick={clearCart}>Delete</Button>                
+                <>
+                <Button onClick={clearCart}>Delete</Button>
+                <Link to='/checkout' 
+                style={{color: 'inherit', textDecoration: 'inherit'}}>
+                    <Button>Checkout</Button>
+                </Link>                
+                </>
             }
             </Box>
             </Container>

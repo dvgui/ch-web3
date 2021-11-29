@@ -27,7 +27,7 @@ export default function Cart() {
                 style={{color: 'inherit', textDecoration: 'inherit'}}>
                 <Button size="small">Cart</Button>
             </Link>
-            <Link to='/category/electronics' 
+            <Link to='/checkout' 
                 style={{color: 'inherit', textDecoration: 'inherit'}}>
                 <Button size="small">Checkout</Button>
             </Link>
