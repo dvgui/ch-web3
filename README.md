@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This project uses [MaterialUI](https://mui.com)
 
 ## Project Overview
+
 The idea of this project is to create a simple shopping app using entirely ReactJS for the frontend whire covering the topics that we see on the [program](https://www.coderhouse.com/online/reactjs).
 
-### How to run the app 
+### How to run the app
+
 `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

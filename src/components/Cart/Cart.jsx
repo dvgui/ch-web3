@@ -1,40 +1,60 @@
 import React from 'react'
 import { useCartContext } from '../../context/CartContext'
-import CartItem from './CartItem';
-import { Button, Container, Typography, Box } from '@mui/material';
-import { Link } from 'react-router-dom';
+import CartItem from './CartItem'
+import { Button, Container, Typography, Box } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
-    const { cartList, clearCart } = useCartContext();
+    const { cartList, clearCart } = useCartContext()
 
     return (
         <div>
-            <Typography variant="h2" component="div">Cart Items</Typography>
+            <Typography variant="h2" component="div">
+                Cart Items
+            </Typography>
             <Container maxWidth="xl">
-            <Box sx={{ 
-                bgcolor: '#cfe8fc', 
-                padding: '4rem 3rem',
-                margin: '2rem 4rem' }}>
-            <div>{cartList.map(item => <CartItem item={item}/>)}</div>
-            {
-                cartList.length === 0 ?
-                <>
-                <Typography variant="h4">The cart is empty</Typography>
-                    <Link to='/' 
-                    style={{color: 'inherit', textDecoration: 'inherit'}}>
-                        <Button>Home</Button>
-                    </Link>
-                </>
-                :
-                <>
-                <Button onClick={clearCart}>Delete</Button>
-                <Link to='/checkout' 
-                style={{color: 'inherit', textDecoration: 'inherit'}}>
-                    <Button>Checkout</Button>
-                </Link>                
-                </>
-            }
-            </Box>
+                <Box
+                    sx={{
+                        bgcolor: '#cfe8fc',
+                        padding: '4rem 3rem',
+                        margin: '2rem 4rem',
+                    }}
+                >
+                    <div>
+                        {cartList.map((item) => (
+                            <CartItem item={item} />
+                        ))}
+                    </div>
+                    {cartList.length === 0 ? (
+                        <>
+                            <Typography variant="h4">
+                                The cart is empty
+                            </Typography>
+                            <Link
+                                to="/"
+                                style={{
+                                    color: 'inherit',
+                                    textDecoration: 'inherit',
+                                }}
+                            >
+                                <Button>Home</Button>
+                            </Link>
+                        </>
+                    ) : (
+                        <>
+                            <Button onClick={clearCart}>Delete</Button>
+                            <Link
+                                to="/checkout"
+                                style={{
+                                    color: 'inherit',
+                                    textDecoration: 'inherit',
+                                }}
+                            >
+                                <Button>Checkout</Button>
+                            </Link>
+                        </>
+                    )}
+                </Box>
             </Container>
         </div>
     )

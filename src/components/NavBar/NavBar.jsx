@@ -1,21 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MoreIcon from '@mui/icons-material/MoreVert';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { styled, alpha } from '@mui/material/styles'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import InputBase from '@mui/material/InputBase'
+import MenuItem from '@mui/material/MenuItem'
+import Menu from '@mui/material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
+import SearchIcon from '@mui/icons-material/Search'
+import AccountCircle from '@mui/icons-material/AccountCircle'
+import MoreIcon from '@mui/icons-material/MoreVert'
 
 import NavLinks from './NavLinks'
-import CartLinks from './CartLinks';
+import CartLinks from './CartLinks'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -31,7 +31,7 @@ const Search = styled('div')(({ theme }) => ({
         marginLeft: theme.spacing(3),
         width: 'auto',
     },
-}));
+}))
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
     padding: theme.spacing(0, 2),
@@ -41,7 +41,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-}));
+}))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
@@ -55,33 +55,33 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
             width: '20ch',
         },
     },
-}));
+}))
 
 export default function PrimarySearchAppBar() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = React.useState(null)
+    const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null)
 
-    const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+    const isMenuOpen = Boolean(anchorEl)
+    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl)
 
     const handleProfileMenuOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
+        setAnchorEl(event.currentTarget)
+    }
 
     const handleMobileMenuClose = () => {
-        setMobileMoreAnchorEl(null);
-    };
+        setMobileMoreAnchorEl(null)
+    }
 
     const handleMenuClose = () => {
-        setAnchorEl(null);
-        handleMobileMenuClose();
-    };
+        setAnchorEl(null)
+        handleMobileMenuClose()
+    }
 
     const handleMobileMenuOpen = (event) => {
-        setMobileMoreAnchorEl(event.currentTarget);
-    };
+        setMobileMoreAnchorEl(event.currentTarget)
+    }
 
-    const menuId = 'primary-search-account-menu';
+    const menuId = 'primary-search-account-menu'
     const renderMenu = (
         <Menu
             anchorEl={anchorEl}
@@ -101,9 +101,9 @@ export default function PrimarySearchAppBar() {
             <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
             <MenuItem onClick={handleMenuClose}>My account</MenuItem>
         </Menu>
-    );
+    )
 
-    const mobileMenuId = 'primary-search-account-menu-mobile';
+    const mobileMenuId = 'primary-search-account-menu-mobile'
     const renderMobileMenu = (
         <Menu
             anchorEl={mobileMoreAnchorEl}
@@ -133,7 +133,7 @@ export default function PrimarySearchAppBar() {
                 <p>Profile</p>
             </MenuItem>
         </Menu>
-    );
+    )
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -144,19 +144,22 @@ export default function PrimarySearchAppBar() {
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        sx={{ mr: 2, display : { md: 'none' } }}
+                        sx={{ mr: 2, display: { md: 'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Link to='/' style={{color: 'inherit', textDecoration: 'inherit'}}>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
+                    <Link
+                        to="/"
+                        style={{ color: 'inherit', textDecoration: 'inherit' }}
                     >
-                        Crypto Shop
-                    </Typography>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'none', sm: 'block' } }}
+                        >
+                            Crypto Shop
+                        </Typography>
                     </Link>
                     <Search>
                         <SearchIconWrapper>
@@ -168,12 +171,9 @@ export default function PrimarySearchAppBar() {
                         />
                     </Search>
                     <NavLinks />
-                    
+
                     <Box sx={{ flexGrow: 1 }} />
-                    <CartLinks 
-                        menuId
-                        handleProfileMenuOpen  
-                    />
+                    <CartLinks menuId handleProfileMenuOpen />
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
@@ -191,5 +191,5 @@ export default function PrimarySearchAppBar() {
             {renderMobileMenu}
             {renderMenu}
         </Box>
-    );
+    )
 }
