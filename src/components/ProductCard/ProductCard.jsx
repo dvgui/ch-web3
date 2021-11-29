@@ -1,24 +1,24 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import ButtonActions from './ButtonActions'
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import ButtonActions from './ButtonActions';
 
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 /* This component is each individual product card */
 
 export default function BasicCard({ product }) {
-    const [inputType, setInputType] = useState('input')
+    const [inputType, setInputType] = useState('input');
 
     const handleInter = () => {
-        setInputType('button')
-    }
+        setInputType('button');
+    };
 
     return (
         <Grid item xs={4}>
@@ -64,5 +64,5 @@ export default function BasicCard({ product }) {
                 </CardActions>
             </Card>
         </Grid>
-    )
+    );
 }

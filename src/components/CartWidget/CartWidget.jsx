@@ -1,17 +1,17 @@
-import React from 'react'
-import { useCartContext } from '../../context/CartContext'
-import CartWidgetItem from './CartWidgetItem'
+import React from 'react';
+import { useCartContext } from '../../context/CartContext';
+import CartWidgetItem from './CartWidgetItem';
 import {
     Button,
     Card,
     CardActions,
     CardContent,
     Typography,
-} from '@mui/material'
-import { Link } from 'react-router-dom'
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
-    const { cartList, clearCart } = useCartContext()
+    const { cartList, clearCart } = useCartContext();
 
     return (
         <Card variant="outlined">
@@ -45,5 +45,5 @@ export default function Cart() {
                 </Link>
             </CardActions>
         </Card>
-    )
+    );
 }

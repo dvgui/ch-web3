@@ -1,13 +1,13 @@
-import React from 'react'
-import { useContext } from 'react'
-import { CartContext } from '../../context/CartContext'
-import { Typography, Button } from '@mui/material'
+import React from 'react';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { Typography, Button } from '@mui/material';
 
 export default function CartItem({ item }) {
-    const { removeItem } = useContext(CartContext)
+    const { removeItem } = useContext(CartContext);
     const remove = (item) => {
-        removeItem(item)
-    }
+        removeItem(item);
+    };
 
     return (
         <div>
@@ -24,5 +24,5 @@ export default function CartItem({ item }) {
                 </Button>
             </Typography>
         </div>
-    )
+    );
 }

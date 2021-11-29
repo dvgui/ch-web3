@@ -1,11 +1,11 @@
-import React from 'react'
-import { useCartContext } from '../../context/CartContext'
-import CartItem from './CartItem'
-import { Button, Container, Typography, Box } from '@mui/material'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { useCartContext } from '../../context/CartContext';
+import CartItem from './CartItem';
+import { Button, Container, Typography, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
-    const { cartList, clearCart } = useCartContext()
+    const { cartList, clearCart } = useCartContext();
 
     return (
         <div>
@@ -57,5 +57,5 @@ export default function Cart() {
                 </Box>
             </Container>
         </div>
-    )
+    );
 }

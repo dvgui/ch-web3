@@ -1,25 +1,25 @@
-import * as React from 'react'
-import { useState } from 'react'
-import Box from '@mui/material/Box'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
+import * as React from 'react';
+import { useState } from 'react';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
 
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
-import ButtonActions from '../ProductCard/ButtonActions'
-import { Link } from 'react-router-dom'
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import ButtonActions from '../ProductCard/ButtonActions';
+import { Link } from 'react-router-dom';
 //import Grid from '@mui/material/Grid';
 
 /* This component is each individual product card */
 
 export default function Product({ product }) {
-    const [inputType, setInputType] = useState('input')
+    const [inputType, setInputType] = useState('input');
 
     const handleInter = () => {
-        setInputType('button')
-    }
+        setInputType('button');
+    };
 
     return (
         <Card sx={{ display: 'flex' }}>
@@ -68,5 +68,5 @@ export default function Product({ product }) {
                 )}
             </CardActions>
         </Card>
-    )
+    );
 }

@@ -29,8 +29,8 @@ export const getFetch = new Promise((resolve, reject) => {
                 stock: 5,
                 img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStGbRipKOgVH9diTIjv9G_xU_iXoB2v4AUfA&usqp=CAU',
             },
-        ]
-        resolve(productos)
-    }, 3000)
+        ];
+        resolve(productos);
+    }, 3000);
     //reject('404 not found');
-})
+});

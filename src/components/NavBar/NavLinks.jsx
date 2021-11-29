@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 function NavLinks() {
     //TODO: get categories from fakeapi and populate dynamically
@@ -39,7 +39,7 @@ function NavLinks() {
                 </Box>
             </Link>
         </>
-    )
+    );
 }
 
-export default NavLinks
+export default NavLinks;

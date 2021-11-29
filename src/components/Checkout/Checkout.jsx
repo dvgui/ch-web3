@@ -1,13 +1,13 @@
-import { Button, Container, Typography } from '@mui/material'
-import { Box } from '@mui/system'
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Button, Container, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { useCartContext } from '../../context/CartContext'
-import UserForm from './UserForm'
+import { useCartContext } from '../../context/CartContext';
+import UserForm from './UserForm';
 
 function Checkout() {
-    const { cartList, cartTotal } = useCartContext()
+    const { cartList, cartTotal } = useCartContext();
 
     // useEffect(() => {
     //     effect
@@ -54,7 +54,7 @@ function Checkout() {
                 </Box>
             </Container>
         </div>
-    )
+    );
 }
 
-export default Checkout
+export default Checkout;
