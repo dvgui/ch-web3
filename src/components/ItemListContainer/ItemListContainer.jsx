@@ -22,7 +22,7 @@ export default function SimpleContainer(props) {
                     }}
                 >
                     <h1>{props.greeting}</h1>
-                    <h2>These are the products we have</h2>
+                    <h2>Welcome to our demo store. Have a great day!</h2>
 
                     <Products category={category} />
                 </Box>

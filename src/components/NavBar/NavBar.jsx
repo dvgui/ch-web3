@@ -158,7 +158,7 @@ export default function PrimarySearchAppBar() {
                             component="div"
                             sx={{ display: { xs: 'none', sm: 'block' } }}
                         >
-                            Crypto Shop
+                            Guido's Shop
                         </Typography>
                     </Link>
                     <Search>
